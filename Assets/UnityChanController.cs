@@ -104,6 +104,11 @@ public class UnityChanController : MonoBehaviour
             // 上方向への速度を代入
             inputVelocityY = this.velocityY;
         }
+        else
+        {
+            //現在のY軸の速度を代入（追加）
+            inputVelocityY = this.myRigidbody.velocity.y;
+        }
 
         // Jumpステートの場合はJumpにfalseをセットする
         if (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
